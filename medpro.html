@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedLink - Medical Records</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <style>
+        /* --- Base Styles --- */
+        :root {
+            --royal-blue: #4169E1;
+            --white: #FFFFFF;
+            --dark-grey: #333333;
+            --light-grey: #f8f9fa;
+            --border-color: #e0e0e0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-grey);
+            color: var(--dark-grey);
+            line-height: 1.6;
+            font-size: 16px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%234169e1' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h-1v-9h-9v9h-1v-9h-9v9h-1v-9h-9v9h-1v-9h-9v9h-1v-9h-9v9h-1v-9H5V6h1V5zM5 6v9h1V6h9V5H6v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zM5 16v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 26v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 36v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 46v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 56v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 66v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 76v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 86v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hidden { display: none !important; }
+        .animated {
+            animation-duration: 0.5s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 20px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .btn {
+            background-color: var(--royal-blue);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            border: 2px solid var(--royal-blue);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 1rem;
+            display: inline-block;
+            text-align: center;
+        }
+        .btn:hover, .btn:focus {
+            background-color: #3558C8;
+            border-color: #3558C8;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(65, 105, 225, 0.4);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--royal-blue);
+        }
+        .btn-secondary:hover, .btn-secondary:focus {
+            background-color: var(--royal-blue);
+            color: var(--white);
+        }
+
+        /* --- Page Layout & Header Styles --- */
+        .page-container {
+            background: var(--white);
+            padding: 2rem 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            width: 100%;
+            max-width: 900px;
+            transition: all 0.3s ease;
+        }
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+        .page-header h2 {
+            color: var(--royal-blue);
+            font-size: 2rem;
+            margin: 0;
+        }
+        .logo-container { height: 60px; }
+        .logo-container img { height: 100%; width: auto; }
+
+        /* --- Dashboard Styles --- */
+        .profile-dashboard {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2.5rem;
+        }
+        .profile-main-content {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+        .profile-photo-area { flex-shrink: 0; text-align: center; }
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ddd;
+        }
+        
+        .profile-details { flex-grow: 1; }
+        .detail-item {
+            display: flex;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .detail-item strong {
+            width: 150px;
+            color: var(--dark-grey);
+            font-weight: 600;
+        }
+        .profile-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        /* Sidebar Styles */
+        .profile-sidebar {
+            background-color: var(--light-grey);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+        }
+        .sidebar-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--royal-blue);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .quick-action-list { list-style: none; }
+        .quick-action-list li { margin-bottom: 1rem; }
+        .quick-action-list a {
+            color: var(--dark-grey);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            padding: 0.75rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .quick-action-list a:hover {
+            background-color: var(--royal-blue);
+            color: var(--white);
+            transform: translateX(5px);
+        }
+        .quick-action-list a i {
+            margin-right: 1rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* --- Records Grid Styles --- */
+        .records-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .record-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+        }
+        .record-card.visible { opacity: 1; }
+        .record-card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .record-card-icon {
+            font-size: 1.8rem;
+            color: var(--royal-blue);
+            margin-right: 1rem;
+        }
+        .record-card-info strong {
+            display: block;
+            font-size: 1.2rem;
+            line-height: 1.3;
+        }
+        .record-card-info span {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .record-card-footer {
+            margin-top: auto;
+            text-align: right;
+            color: var(--royal-blue);
+            font-weight: 600;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* --- Form Styles --- */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 1.1rem; }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--royal-blue);
+            box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.2);
+        }
+        .form-group .input-icon {
+            position: absolute; left: 1rem; top: 50%; transform: translateY(-50%);
+            color: #aaa;
+            pointer-events: none;
+        }
+        .form-group .relative:focus-within .input-icon {
+            color: var(--royal-blue);
+        }
+        
+        .page-actions {
+            margin-top: 2.5rem;
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 900px) {
+            .profile-dashboard { grid-template-columns: 1fr; }
+            .profile-sidebar { margin-top: 2rem; }
+        }
+        @media (max-width: 768px) {
+            .profile-main-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .profile-details { width: 100%; }
+            .detail-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .detail-item strong { width: auto; margin-bottom: 0.25rem; }
+            .profile-actions { justify-content: center; }
+        }
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            .page-container { padding: 1.5rem; }
+            .page-header { flex-direction: column; gap: 1rem; text-align: center; }
+            .page-header h2 { font-size: 1.75rem; }
+            .logo-container { height: 50px; }
+            .page-actions { flex-direction: column; align-items: stretch; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app-root">
+
+        <section class="page-container" id="medical-profile-page">
+            <div class="page-header">
+                <h2>Dashboard</h2>
+                <div class="logo-container">
+                    <img src="https://i.ibb.co/0VfWYN96/455555-removebg-preview.png" alt="MedLink Logo">
+                </div>
+            </div>
+            <div class="profile-dashboard">
+                <div class="profile-main">
+                    <div class="profile-main-content">
+                        <div class="profile-photo-area">
+                            <img src="https://i.pravatar.cc/150" alt="Profile Photo" class="profile-photo" id="dashboard-photo">
+                        </div>
+                        <div class="profile-details">
+                            <div class="detail-item"><strong>NAME:</strong> <span id="dashboard-name">Loading...</span></div>
+                            <div class="detail-item"><strong>AGE:</strong> <span id="dashboard-age">...</span></div>
+                            <div class="detail-item"><strong>BLOOD GRP:</strong> <span id="dashboard-blood-group">...</span></div>
+                            <div class="detail-item"><strong>PROFESSION:</strong> <span id="dashboard-profession">...</span></div>
+                            <div class="detail-item"><strong>GENETIC:</strong> <span id="dashboard-genetic-conditions">...</span></div>
+                        </div>
+                    </div>
+                     <div id="no-profile-message" class="hidden text-center bg-yellow-100 p-4 rounded-lg my-4">
+                         <p class="font-semibold">Welcome to MedLink!</p>
+                         <p>It looks like you don't have a profile yet. Please create one to continue.</p>
+                    </div>
+                    <div class="profile-actions">
+                         <button type="button" class="btn btn-secondary browser-back-btn">&larr; Go Back</button>
+                         <button class="btn" id="view-history-btn">View Medical History</button>
+                         <button class="btn btn-secondary" id="edit-profile-btn">Edit Profile</button>
+                    </div>
+                </div>
+                <aside class="profile-sidebar">
+                    <h3 class="sidebar-title">Quick Actions</h3>
+                    <ul class="quick-action-list">
+                        <li><a href="#" id="sidebar-add-record-btn"><i class="fas fa-file-medical"></i> Add New Record</a></li>
+                        <li><a href="#" id="book-appointment-btn"><i class="fas fa-calendar-check"></i> Book Appointment</a></li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <section class="page-container hidden" id="medical-history-page">
+            <div class="page-header">
+                <h2>Medical History</h2>
+            </div>
+            <div class="records-grid" id="records-grid">
+            </div>
+            <div class="page-actions">
+                <button type="button" class="btn btn-secondary browser-back-btn">&larr; Go Back</button>
+                <button class="btn btn-secondary" id="history-back-btn">Back to Dashboard</button>
+                <button class="btn" id="history-add-record-btn">Add New Record</button>
+            </div>
+        </section>
+
+        <section class="page-container hidden" id="profile-edit-page">
+            <div class="page-header">
+                <h2 id="profile-form-title">Create Your Profile</h2>
+            </div>
+            <form id="profile-form">
+                <div class="flex flex-col items-center mb-6">
+                    <img src="https://i.pravatar.cc/150" id="profile-pic-preview" alt="Profile" class="w-36 h-36 rounded-full object-cover border-4 border-gray-300">
+                    <p class="text-xs text-gray-500 mt-2">A unique profile photo is assigned to you.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+                    <div class="md:col-span-2 form-group">
+                        <label for="profile-name">Full Name</label>
+                        <input type="text" id="profile-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-age">Age</label>
+                        <input type="number" id="profile-age" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-blood-group">Blood Group</label>
+                        <select id="profile-blood-group">
+                            <option value="Unknown">Select...</option>
+                            <option value="A+">A+</option> <option value="A-">A-</option>
+                            <option value="B+">B+</option> <option value="B-">B-</option>
+                            <option value="AB+">AB+</option> <option value="AB-">AB-</option>
+                            <option value="O+">O+</option> <option value="O-">O-</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2 form-group">
+                        <label for="profile-profession">Profession</label>
+                        <input type="text" id="profile-profession">
+                    </div>
+                    <div class="md:col-span-2 form-group">
+                         <label for="profile-genetic-conditions">Known Genetic Conditions</label>
+                         <textarea id="profile-genetic-conditions" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="page-actions">
+                    <button type="button" class="btn btn-secondary browser-back-btn">&larr; Go Back</button>
+                    <button type="button" class="btn btn-secondary" id="profile-cancel-btn">Cancel</button>
+                    <button type="submit" class="btn">Save Profile</button>
+                </div>
+                <p id="save-status" class="text-center text-green-600 mt-4 h-5"></p>
+            </form>
+        </section>
+
+        <section class="page-container hidden" id="add-record-page">
+            <div class="page-header">
+                <h2>Add New Medical Record</h2>
+            </div>
+            <form id="add-record-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="record-title">Title / Sickness</label>
+                        <input type="text" id="record-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctor-name">Doctor's Name</label>
+                        <input type="text" id="doctor-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="visit-date">Date of Visit</label>
+                        <input type="date" id="visit-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="further-details">Further Details & Diagnosis</label>
+                        <textarea id="further-details" rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="page-actions">
+                    <button type="button" class="btn btn-secondary browser-back-btn">&larr; Go Back</button>
+                    <button type="button" class="btn btn-secondary" id="record-cancel-btn">Cancel</button>
+                    <button type="submit" class="btn">Save Record</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, onSnapshot, collection, addDoc, query, setDoc, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        setLogLevel('debug');
+
+        const firebaseConfig = {
+          apiKey: "AIzaSyBjf5lp8vhZrpgdOiGyAhH9iSp4UrXXZCM",
+          authDomain: "medlink-e4f46.firebaseapp.com",
+          projectId: "medlink-e4f46",
+          storageBucket: "medlink-e4f46.appspot.com",
+          messagingSenderId: "109099855422",
+          appId: "1:109099855422:web:9ae346a0f54dead6412b6f",
+        };
+
+        const appId = firebaseConfig.appId;
+        let app, auth, db, userId;
+        let currentProfileData = {};
+
+        const pages = {
+            dashboard: document.getElementById('medical-profile-page'),
+            history: document.getElementById('medical-history-page'),
+            profileEdit: document.getElementById('profile-edit-page'),
+            addRecord: document.getElementById('add-record-page')
+        };
+
+        const showPage = (pageKey) => {
+            Object.values(pages).forEach(page => page.classList.add('hidden'));
+            if(pages[pageKey]) pages[pageKey].classList.remove('hidden');
+        };
+
+        function populateDashboard(data) {
+            if (!data) data = {};
+            currentProfileData = data;
+            document.getElementById('dashboard-name').textContent = data.name || 'N/A';
+            document.getElementById('dashboard-age').textContent = data.age || 'N/A';
+            document.getElementById('dashboard-blood-group').textContent = data.bloodGroup || 'Unknown';
+            document.getElementById('dashboard-profession').textContent = data.profession || 'N/A';
+            document.getElementById('dashboard-genetic-conditions').textContent = data.geneticConditions || 'None Reported';
+            document.getElementById('dashboard-photo').src = data.photoURL || `https://i.pravatar.cc/150?u=${userId}`;
+        }
+        
+        function populateProfileForm(data) {
+             if (!data) data = {};
+            document.getElementById('profile-name').value = data.name || '';
+            document.getElementById('profile-age').value = data.age || '';
+            document.getElementById('profile-blood-group').value = data.bloodGroup || 'Unknown';
+            document.getElementById('profile-profession').value = data.profession || '';
+            document.getElementById('profile-genetic-conditions').value = data.geneticConditions || '';
+            document.getElementById('profile-pic-preview').src = data.photoURL || `https://i.pravatar.cc/150?u=${userId}`;
+        }
+
+        function loadMedicalRecords(currentUserId) {
+            const recordsCollectionRef = collection(db, `artifacts/${appId}/users/${currentUserId}/medicalRecords`);
+            onSnapshot(query(recordsCollectionRef), (snapshot) => {
+                const recordsGrid = document.getElementById('records-grid');
+                recordsGrid.innerHTML = '';
+                if (snapshot.empty) {
+                    recordsGrid.innerHTML = `<p class="text-gray-500 col-span-full text-center">No medical records found.</p>`;
+                    return;
+                }
+                snapshot.docs.forEach(doc => {
+                    const record = doc.data();
+                    const card = document.createElement('div');
+                    card.className = 'record-card visible animated fadeInUp';
+                    card.innerHTML = `
+                        <div class="record-card-header">
+                             <i class="fas fa-notes-medical record-card-icon"></i>
+                            <div class="record-card-info">
+                                 <strong>${record.title || 'Untitled'}</strong>
+                                 <span>Date: ${record.date || 'N/A'}</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-4">${record.details || ''}</p>
+                        <div class="record-card-footer">Dr. ${record.doctorName || 'N/A'}</div>
+                    `;
+                    recordsGrid.appendChild(card);
+                });
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                app = initializeApp(firebaseConfig);
+                auth = getAuth(app);
+                db = getFirestore(app);
+
+                onAuthStateChanged(auth, (user) => {
+                    if (user) {
+                        userId = user.uid;
+                        const profileDocRef = doc(db, `artifacts/${appId}/users/${userId}/medicalProfile`, "profile");
+                        onSnapshot(profileDocRef, (docSnap) => {
+                            const noProfileMessage = document.getElementById('no-profile-message');
+                            if (docSnap.exists()) {
+                                noProfileMessage.classList.add('hidden');
+                                populateDashboard(docSnap.data());
+                            } else {
+                                noProfileMessage.classList.remove('hidden');
+                                populateDashboard({});
+                                document.getElementById('edit-profile-btn').innerText = 'Create Profile';
+                            }
+                        });
+                        loadMedicalRecords(userId);
+                    } else {
+                        signInAnonymously(auth);
+                    }
+                });
+            } catch (error) {
+                console.error("Firebase Init Error:", error);
+                document.body.innerHTML = 'Error initializing application. Please refresh.';
+            }
+
+            document.getElementById('view-history-btn').addEventListener('click', () => showPage('history'));
+            document.getElementById('history-back-btn').addEventListener('click', () => showPage('dashboard'));
+            document.getElementById('sidebar-add-record-btn').addEventListener('click', (e) => { e.preventDefault(); showPage('addRecord'); });
+            document.getElementById('history-add-record-btn').addEventListener('click', () => showPage('addRecord'));
+            document.getElementById('record-cancel-btn').addEventListener('click', () => showPage('history'));
+            document.getElementById('profile-cancel-btn').addEventListener('click', () => showPage('dashboard'));
+            
+            document.getElementById('book-appointment-btn').addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = '8.html';
+            });
+
+            document.querySelectorAll('.browser-back-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    history.back();
+                });
+            });
+
+            document.getElementById('edit-profile-btn').addEventListener('click', () => {
+                document.getElementById('profile-form-title').innerText = currentProfileData.name ? 'Edit Your Profile' : 'Create Your Profile';
+                populateProfileForm(currentProfileData);
+                showPage('profileEdit');
+            });
+
+            document.getElementById('profile-form').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                if (!userId) return;
+                const saveStatus = document.getElementById('save-status');
+                
+                const profileData = {
+                    name: document.getElementById('profile-name').value,
+                    age: document.getElementById('profile-age').value,
+                    bloodGroup: document.getElementById('profile-blood-group').value,
+                    profession: document.getElementById('profile-profession').value,
+                    geneticConditions: document.getElementById('profile-genetic-conditions').value,
+                    lastUpdated: new Date().toISOString(),
+                    photoURL: `https://i.pravatar.cc/150?u=${userId}`
+                };
+
+                try {
+                    const profileDocRef = doc(db, `artifacts/${appId}/users/${userId}/medicalProfile`, "profile");
+                    await setDoc(profileDocRef, profileData, { merge: true });
+                    saveStatus.innerText = "Profile saved successfully!";
+                    setTimeout(() => {
+                        saveStatus.innerText = "";
+                        showPage('dashboard');
+                    }, 1500);
+                } catch (error) {
+                    saveStatus.innerText = "Failed to save profile.";
+                    console.error("Profile save error:", error);
+                }
+            });
+
+            document.getElementById('add-record-form').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                if (!userId) return;
+
+                const recordData = {
+                    title: document.getElementById('record-title').value,
+                    doctorName: document.getElementById('doctor-name').value,
+                    date: document.getElementById('visit-date').value,
+                    details: document.getElementById('further-details').value,
+                    createdAt: new Date().toISOString()
+                };
+
+                try {
+                    const recordsCollectionRef = collection(db, `artifacts/${appId}/users/${userId}/medicalRecords`);
+                    await addDoc(recordsCollectionRef, recordData);
+                    e.target.reset();
+                    showPage('history');
+                } catch (error) {
+                    console.error("Add record error:", error);
+                    alert("Failed to save record.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

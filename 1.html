@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedLink - Your All-in-One Health Companion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Global Styles & Reset --- */
+        :root {
+            --royal-blue: #4169E1;
+            --white: #FFFFFF;
+            --dark-grey: #333333;
+            --light-grey: #f8f9fa;
+            --danger-red: #d9534f;
+            --success-green: #28a745;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--white);
+            color: var(--dark-grey);
+            line-height: 1.6;
+            font-size: 16px; 
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%234169e1' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h-1v-9h-9v9h-1v-9h-9v9h-1v-9h-9v9h-1v-9h-9v9h-1v-9h-9v9h-1v-9H5V6h1V5zM5 6v9h1V6h9V5H6v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zM5 16v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 26v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 36v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 46v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 56v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 66v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 76v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 86v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        a { text-decoration: none; color: inherit; }
+
+        .hidden { display: none !important; }
+
+        /* --- Header Styles --- */
+        .main-header { background-color: var(--white); padding: 1rem 2.5rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 999; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); }
+        .logo-container img { height: 70px; transition: transform 0.3s ease; }
+        .logo-container a:hover img { transform: scale(1.05); }
+        .main-nav { flex-grow: 1; display: flex; justify-content: center; }
+        .main-nav ul { list-style: none; display: flex; gap: 2.5rem; }
+        .main-nav a { font-size: 1.1rem; font-weight: 600; transition: color 0.3s ease; position: relative; cursor: pointer; }
+        .main-nav a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 50%; transform: translateX(-50%); background-color: var(--royal-blue); transition: width 0.3s ease; }
+        .main-nav a:hover { color: var(--royal-blue); }
+        .main-nav a:hover::after { width: 100%; }
+        .header-actions { display: flex; align-items: center; gap: 1rem;}
+        .header-actions .btn { background-color: var(--royal-blue); color: var(--white); padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; border: 2px solid var(--royal-blue); transition: all 0.3s ease; white-space: nowrap; cursor: pointer; }
+        .header-actions .btn:hover { background-color: #3558C8; border-color: #3558C8; transform: translateY(-2px); }
+        #logout-btn { background-color: transparent; color: var(--royal-blue); }
+        #logout-btn:hover { background-color: var(--royal-blue); color: var(--white); }
+
+        /* --- Fullscreen Centered Prompt --- */
+        .fullscreen-prompt {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: var(--light-grey);
+            z-index: 1010;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+        }
+        .fullscreen-prompt h2 {
+            font-size: 2.5rem;
+            color: var(--dark-grey);
+            margin-bottom: 0.5rem;
+        }
+        .fullscreen-prompt p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+        .fullscreen-prompt .btn {
+            font-size: 1.2rem;
+            padding: 1rem 2.5rem;
+        }
+
+        /* --- Hero Section & Main Content --- */
+        .main-content { transition: opacity 0.3s ease; }
+        .hero-section-container { padding: 4rem 2rem 2rem; }
+        .hero-section { max-width: 950px; margin: 0 auto; padding: 4rem 2rem; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); text-align: center; color: var(--white); position: relative; overflow: hidden; background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1576091160550-2173dba9996a?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover; }
+        .hero-content h1 { font-size: clamp(2.2rem, 5vw + 1rem, 3.5rem); }
+        .hero-content p { font-size: clamp(1rem, 2vw + 0.5rem, 1.2rem); max-width: 600px; margin: 0 auto 2rem; }
+        .hero-content .btn-hero { background-color: transparent; color: var(--white); padding: 1rem 2.5rem; font-size: 1.2rem; font-weight: 600; border-radius: 10px; border: 2px solid var(--white); cursor:pointer; transition: all 0.3s ease; }
+        .hero-content .btn-hero:hover { background-color: var(--royal-blue); border-color: var(--royal-blue); }
+        .features-section { padding: 4rem 2rem; background-color: var(--light-grey); }
+        .features-container { max-width: 1200px; margin: 0 auto; text-align: center; }
+        .features-title { font-size: 2.5rem; color: var(--royal-blue); margin-bottom: 3rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .feature-card { background: var(--white); padding: 2rem; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); transition: all 0.3s ease; display: flex; flex-direction: column; position: relative; }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 12px 35px rgba(0,0,0,0.12); }
+        .feature-icon { color: var(--royal-blue); margin-bottom: 1rem; }
+        .feature-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .feature-card p { font-size: 1rem; margin-bottom: 1rem; flex-grow: 1; }
+        .feature-card .try-btn { background-color: transparent; color: var(--royal-blue); padding: 0.5rem 1rem; border-radius: 6px; font-weight: 600; border: 2px solid var(--royal-blue); cursor: pointer; transition: all 0.3s ease; margin-top: auto; }
+        .feature-card .try-btn:hover { background-color: var(--royal-blue); color: var(--white); }
+        .card-link-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; border-radius: 15px; }
+        .feature-card > * { position: relative; z-index: 2; }
+        
+        /* --- Floating AI Chat Button --- */
+        .ai-chat-button { position: fixed; bottom: 2rem; right: 2rem; width: 65px; height: 65px; background: var(--royal-blue); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: var(--white); font-weight: 700; font-size: 1.5rem; box-shadow: 0 5px 20px rgba(65, 105, 225, 0.4); cursor: pointer; transition: all 0.3s ease; z-index: 1001; }
+        .ai-chat-button:hover { transform: scale(1.1) rotate(10deg); }
+        
+        /* --- Modal Styles (Generic) --- */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 1002; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .modal-overlay.visible { opacity: 1; visibility: visible; }
+        .modal-container { background: var(--white); padding: 2.5rem; border-radius: 15px; width: 90%; max-width: 600px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); transform: scale(0.9); transition: transform 0.3s ease; }
+        .modal-overlay.visible .modal-container { transform: scale(1); }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+        .modal-header h2 { color: var(--royal-blue); font-size: 1.8rem; }
+        .modal-close-btn { background: none; border: none; font-size: 2rem; cursor: pointer; color: #aaa; transition: color 0.3s ease; }
+        .modal-close-btn:hover { color: var(--dark-grey); }
+        .modal-disclaimer { font-size: 0.8rem; color: var(--danger-red); background: #fdf2f2; border: 1px solid #f8d7da; padding: 0.75rem; border-radius: 8px; margin-bottom: 1rem; }
+        .modal-content textarea { width: 100%; height: 120px; padding: 1rem; border: 1px solid #ddd; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 1rem; resize: vertical; margin-bottom: 1rem; }
+        .modal-content .modal-action-btn { width: 100%; padding: 1rem; background: var(--royal-blue); color: var(--white); border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease; position: relative; }
+        .modal-content .modal-action-btn:disabled { background-color: #a9a9a9; cursor: not-allowed; }
+        .ai-results { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #eee; max-height: 250px; overflow-y: auto; line-height: 1.8; }
+        .ai-results strong { color: var(--royal-blue); }
+        .ai-results ul { list-style-position: inside; padding-left: 0.5rem; }
+        .ai-results li { margin-bottom: 0.5rem; }
+        
+        /* --- Improved Loader --- */
+        .btn-loader { width: 20px; height: 20px; border: 3px solid var(--royal-blue); border-top-color: var(--white); border-radius: 50%; display: inline-block; box-sizing: border-box; animation: rotation 0.8s linear infinite; position: absolute; right: 20px; top: 50%; transform: translate(-50%, -50%); opacity: 0; transition: opacity 0.3s; }
+        .modal-action-btn.loading .btn-loader { opacity: 1; }
+        .modal-action-btn.loading .btn-text { visibility: hidden; }
+        .save-profile-btn .btn-loader { border-top-color: var(--white); }
+        .symptom-analyze-btn .btn-loader, .specialist-suggest-btn .btn-loader { border-top-color: var(--white); }
+        .ai-loader { width: 48px; height: 48px; border: 5px solid var(--royal-blue); border-bottom-color: transparent; border-radius: 50%; display: none; box-sizing: border-box; animation: ai-rotation 1s linear infinite; margin: 1rem auto 0; }
+        @keyframes rotation { 0% { transform: translateY(-50%) rotate(0deg); } 100% { transform: translateY(-50%) rotate(360deg); } }
+        @keyframes ai-rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* --- Auth Modal Specific Styles --- */
+        #auth-modal .modal-container { max-width: 450px; }
+        .auth-tabs { display: flex; border-bottom: 1px solid #ddd; margin-bottom: 1.5rem; }
+        .auth-tab { padding: 0.75rem 1.5rem; cursor: pointer; font-weight: 600; color: #aaa; border-bottom: 3px solid transparent; transition: all 0.3s ease; }
+        .auth-tab.active { color: var(--royal-blue); border-bottom-color: var(--royal-blue); }
+        .auth-form { display: none; }
+        .auth-form.active { display: block; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 0.5rem; }
+        .form-group input, .form-group select { width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; }
+        .auth-form .modal-action-btn { margin-top: 1rem; }
+        .forgot-password { text-align: right; font-size: 0.9rem; margin-top: 0.5rem; }
+        .forgot-password a { color: var(--royal-blue); text-decoration: underline; }
+        .auth-message { text-align: center; margin-bottom: 1rem; font-weight: 600; display: none; }
+        #auth-error-message { color: var(--danger-red); }
+        #auth-success-message { color: var(--success-green); }
+
+        /* --- Profile Creation Page Styles --- */
+        #profile-creation-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--light-grey);
+            z-index: 1010;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        #profile-form-container {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            width: 100%;
+            max-width: 700px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        #profile-form-container h2 { text-align: center; color: var(--royal-blue); margin-bottom: 2rem; }
+        #profile-form .profile-pic-area { text-align: center; margin-bottom: 1.5rem; }
+        #profile-pic-preview { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid #ddd; cursor: pointer; }
+        #profile-pic-upload { display: none; }
+        #profile-form .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        #profile-form .form-group-full { grid-column: 1 / -1; }
+        #profile-form #genetic-conditions { width: 100%; height: 80px; resize: vertical; padding: 0.75rem; border-radius: 6px; border: 1px solid #ccc; }
+        #profile-form .skip-group { display: flex; align-items: center; gap: 0.5rem; }
+        #profile-form .save-profile-btn { width: 100%; padding: 1rem; background: var(--royal-blue); color: var(--white); border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease; margin-top: 1.5rem; }
+        #profile-form .save-profile-btn:disabled { background-color: #a9a9a9; cursor: not-allowed; }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) { .main-nav { display: none; } .main-header { justify-content: space-between; } }
+        @media (max-width: 768px) { .main-header { padding: 0.8rem 1.5rem; } .logo-container img { height: 55px; } .hero-section-container, .features-section { padding: 3rem 1.5rem; } .hero-section { padding: 3rem 1.5rem; } .features-title { font-size: 2rem; } #profile-form .form-grid { grid-template-columns: 1fr; } .profile-prompt-banner { flex-direction: column; gap: 1rem; } }
+        @media (max-width: 480px) { .main-header { flex-direction: column; gap: 1rem; padding: 1rem; } .header-actions { width: 100%; } .header-actions .btn { width: 100%; } .hero-section-container, .features-section { padding: 2rem 1rem; } .hero-section { padding: 2.5rem 1rem; } .ai-chat-button { width: 55px; height: 55px; bottom: 1rem; right: 1rem; } .modal-container { padding: 1.5rem; } .modal-header h2 { font-size: 1.5rem; } #profile-form-container { padding: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <div id="app-container">
+        <header class="main-header">
+            <div class="logo-container">
+                <a href="#"><img src="https://i.ibb.co/0VfWYN96/455555-removebg-preview.png" alt="MedLink Logo"></a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#features">Our Services</a></li>
+                    <li><a href="#" data-modal-target="about-us-modal">About Us</a></li>
+                    <li><a href="#" data-modal-target="contact-us-modal">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn" data-modal-target="auth-modal">Login / Signup</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="hero-section-container"><section class="hero-section"><div class="hero-content"><h1>Your All-in-One Health Companion</h1><p>Manage appointments, access records, and get expert medical support, all in one place.</p><button class="btn btn-hero" data-modal-target="auth-modal">Login / Signup</button></div></section></div>
+            <section id="features" class="features-section"><div class="features-container"><h2 class="features-title">Our Core Features</h2><div class="features-grid">
+                <div class="feature-card"><div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-robot" viewBox="0 0 16 16"><path d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5M3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.6 26.6 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.93.93 0 0 1-.765.935c-.845.147-2.34.346-4.235.346s-3.39-.2-4.235-.346A.93.93 0 0 1 3 9.219zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a25 25 0 0 1-1.871-.183.25.25 0 0 0-.068.217l.92.9a.25.25 0 0 0 .217.068l1.871.183.25.25 0 0 0 .068-.217l-.92-.9a.25.25 0 0 0-.217-.068m2.121.854a.25.25 0 0 0-.217-.068l-.92.9a.25.25 0 0 0 .068.217l.92.9a.25.25 0 0 0 .217.068l1.871-.183a.25.25 0 0 0 .068-.217l-.92-.9a.25.25 0 0 0-.217-.068Z"/><path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/></svg></div><h3>AI Symptom Analyzer</h3><p>Describe your symptoms to our AI for instant, informative analysis and guidance.</p><button class="try-btn" data-feature="symptomAnalyzer" data-modal-target="symptom-modal">Try It ✨</button></div>
+                <div class="feature-card"><div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-person-video2" viewBox="0 0 16 16"><path d="M10.243 3.86a.5.5 0 0 1 .5.5v8.08a.5.5 0 0 1-.5.5h-8.08a.5.5 0 0 1-.5-.5v-8.08a.5.5 0 0 1 .5-.5zm-8.586 9.08a1.5 1.5 0 0 0 1.5 1.5h8.08a1.5 1.5 0 0 0 1.5-1.5v-8.08a1.5 1.5 0 0 0-1.5-1.5h-8.08a1.5 1.5 0 0 0-1.5 1.5z"/><path d="M5.646 5.146a.5.5 0 0 1 .708 0L8 6.793l1.646-1.647a.5.5 0 0 1 .708.708L8.707 7.5l1.647 1.646a.5.5 0 0 1-.708.708L8 8.207l-1.646 1.647a.5.5 0 0 1-.708-.708L7.293 7.5 5.646 5.854a.5.5 0 0 1 0-.708"/></svg></div><h3>Find a Specialist</h3><p>Not sure who to see? Our AI can suggest the right type of specialist for your issue.</p><button class="try-btn" data-feature="specialistSuggester" data-modal-target="specialist-modal">Get Suggestion ✨</button></div>
+                <div class="feature-card">
+                    <a href="8.html" class="card-link-overlay"></a>
+                    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-calendar2-plus" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5"/><path d="M2.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM8 8a.5.5 0 0 1 .5.5V10H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V11H6a.5.5 0 0 1 0-1h1.5V8.5A.5.5 0 0 1 8 8"/></svg></div>
+                    <h3>Book a Doctor</h3>
+                    <p>Easily book virtual or in-person appointments with a wide network of trusted doctors.</p>
+                    <button class="try-btn" onclick="window.location.href='8.html'">Book Now</button>
+                </div>
+                <div class="feature-card">
+                    <a href="medi.html" class="card-link-overlay"></a>
+                    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-capsule" viewBox="0 0 16 16"><path d="M1.828 8.9-8.9 1.828a4.5 4.5 0 1 1 6.364 6.364L1.828 8.9Zm9.24-7.072a4.5 4.5 0 1 1-6.364 6.364L11.068 1.828a4.5 4.5 0 0 1 0-6.364Z"/></svg></div>
+                    <h3>Order Medicine</h3>
+                    <p>Get your prescribed medicines delivered to your doorstep quickly and conveniently.</p>
+                    <button class="try-btn" onclick="window.location.href='medi.html'">Order Now</button>
+                </div>
+                <div class="feature-card">
+                    <a href="medpro.html" class="card-link-overlay"></a>
+                    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-shield-lock" viewBox="0 0 16 16"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.056.255.098.38.115a.7.7 0 0 0 .117 0c.125-.017.26-.059.38-.115.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.953-.325-1.922-.65-2.837-.856C9.82.99 8.69 1.25 8 1.5c-.69-.25-1.82-.51-2.662-.91M9 13a1 1 0 0 1 1-1v-1a2 2 0 1 0-4 0v1a1 1 0 0 1 1 1z"/></svg></div>
+                    <h3>Secure Medical Records</h3>
+                    <p>Keep your health history, prescriptions, and lab results safe and accessible anytime.</p>
+                    <button class="try-btn" onclick="window.location.href='medpro.html'">Add New Record</button>
+                </div>
+            </div>
+        </div></section>
+        </main>
+        
+        <a id="ai-chat-button" class="ai-chat-button" title="Symptom Analyzer" data-feature="symptomAnalyzer" data-modal-target="symptom-modal">AI</a>
+
+        <div id="profile-setup-prompt-page" class="fullscreen-prompt hidden">
+            <div>
+                <h2>Welcome to MedLink!</h2>
+                <p>Let's set up your medical profile to personalize your experience and provide better assistance.</p>
+                <button id="setup-profile-btn-main" class="btn">Setup Your Medical Profile</button>
+            </div>
+        </div>
+        <section id="profile-creation-page" class="hidden">
+            <div id="profile-form-container">
+                <h2>Create Your Medical Profile</h2>
+                <form id="profile-form">
+                    <div class="profile-pic-area">
+                        <label for="profile-pic-upload">
+                            <img src="https://placehold.co/150x150/EFEFEF/333333?text=Add+Photo" id="profile-pic-preview" alt="Profile Picture Preview">
+                        </label>
+                        <input type="file" id="profile-pic-upload" accept="image/*">
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group form-group-full">
+                            <label for="profile-name">Full Name</label>
+                            <input type="text" id="profile-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-age">Age</label>
+                            <input type="number" id="profile-age" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-gender">Gender</label>
+                            <select id="profile-gender">
+                                <option value="Prefer not to say">Prefer not to say</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-blood-group">Blood Group</label>
+                            <select id="profile-blood-group">
+                                <option value="Unknown">Unknown</option>
+                                <option value="A+">A+</option><option value="A-">A-</option>
+                                <option value="B+">B+</option><option value="B-">B-</option>
+                                <option value="AB+">AB+</option><option value="AB-">AB-</option>
+                                <option value="O+">O+</option><option value="O-">O-</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-profession">Profession</label>
+                            <input type="text" id="profile-profession">
+                        </div>
+                        <div class="form-group-full">
+                             <label for="genetic-conditions">Any Known Genetic Conditions? (Optional)</label>
+                             <textarea id="genetic-conditions" placeholder="e.g., Type 1 Diabetes, Sickle Cell Anemia..."></textarea>
+                             <div class="skip-group">
+                                 <input type="checkbox" id="no-genetic-conditions">
+                                 <label for="no-genetic-conditions">I have no known genetic conditions.</label>
+                             </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="save-profile-btn"><span class="btn-text">Save Profile & Continue</span><span class="btn-loader"></span></button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <div id="symptom-modal" class="modal-overlay"><div class="modal-container"><div class="modal-header"><h2>AI Symptom Analyzer ✨</h2><button class="modal-close-btn">&times;</button></div><div class="modal-disclaimer"><strong>Disclaimer:</strong> For informational purposes only. Consult a healthcare professional for medical advice.</div><div class="modal-content"><textarea class="symptom-input" placeholder="Describe your symptoms..."></textarea><button class="modal-action-btn symptom-analyze-btn"><span class="btn-text">Analyze Symptoms</span><span class="btn-loader"></span></button><div class="ai-loader"></div><div class="ai-results"></div></div></div></div>
+    <div id="specialist-modal" class="modal-overlay"><div class="modal-container"><div class="modal-header"><h2>AI Specialist Suggester ✨</h2><button class="modal-close-btn">&times;</button></div><div class="modal-content"><textarea class="specialist-input" placeholder="Describe your health issue..."></textarea><button class="modal-action-btn specialist-suggest-btn"><span class="btn-text">Suggest Specialist</span><span class="btn-loader"></span></button><div class="ai-loader"></div><div class="ai-results"></div></div></div></div>
+    <div id="auth-modal" class="modal-overlay"><div class="modal-container"><div class="modal-header"><h2>Welcome to MedLink</h2><button class="modal-close-btn">&times;</button></div><div class="modal-content"><div class="auth-message" id="auth-error-message"></div><div class="auth-message" id="auth-success-message"></div><div class="auth-tabs"><div class="auth-tab active" data-form="login-form">Login</div><div class="auth-tab" data-form="signup-form">Signup</div></div><form id="login-form" class="auth-form active"><div class="form-group"><label for="login-email">Email</label><input type="email" id="login-email" required></div><div class="form-group"><label for="login-password">Password</label><input type="password" id="login-password" required></div><div class="forgot-password"><a href="#">Forgot Password?</a></div><button type="submit" class="modal-action-btn"><span class="btn-text">Login</span><span class="btn-loader"></span></button></form><form id="signup-form" class="auth-form"><div class="form-group"><label for="signup-name">Full Name</label><input type="text" id="signup-name" required></div><div class="form-group"><label for="signup-email">Email</label><input type="email" id="signup-email" required></div><div class="form-group"><label for="signup-password">Password</label><input type="password" id="signup-password" required></div><button type="submit" class="modal-action-btn"><span class="btn-text">Create Account</span><span class="btn-loader"></span></button></form></div></div></div>
+    
+    <div id="about-us-modal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>About Us</h2>
+                <button class="modal-close-btn">&times;</button>
+            </div>
+            <div class="modal-content" style="line-height: 1.8;">
+                <p>edlink simplifies healthcare by connecting patients with doctors and hospitals. Our platform provides real-time bed availability, seamless appointment booking, and transparent information to ensure you get the right care, at the right time. Guided by trust and innovation, our mission is to make healthcare accessible and uncomplicated for everyone.</p>
+                <br>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 0.5rem;"><strong>What We Do:</strong> Connect patients with doctors and hospitals to simplify healthcare access.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Key Services:</strong> Real-time bed availability, seamless appointment booking, and transparent information.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Our Mission:</strong> To provide timely, accessible, and connected care for everyone through technology.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact-us-modal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Contact Us</h2>
+                <button class="modal-close-btn">&times;</button>
+            </div>
+            <div class="modal-content">
+                <p style="font-size: 1.1rem; text-align: center;">You can Mail us on - <strong>medlink@outlook.in</strong></p>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module">
+        const GEMINI_API_KEY = "AIzaSyDwBrcE5h0E-xn6RiM3CJrXqs6OI5Vip-k"; 
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBjf5lp8vhZrpgdOiGyAhH9iSp4UrXXZCM",
+            authDomain: "medlink-e4f46.firebaseapp.com",
+            projectId: "medlink-e4f46",
+            storageBucket: "medlink-e4f46.appspot.com",
+            messagingSenderId: "109099855422",
+            appId: "1:109099855422:web:9ae346a0f54dead6412b6f",
+            measurementId: "G-C4Z1JKBG2E"
+        };
+        
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-auth.js";
+        import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-firestore.js";
+        import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-storage.js";
+        
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const db = getFirestore(app);
+        const storage = getStorage(app);
+
+        let currentUser = null;
+        
+        const headerActions = document.querySelector('.header-actions');
+        const authModal = document.getElementById('auth-modal');
+        const appContainer = document.getElementById('app-container');
+        const profileSetupPromptPage = document.getElementById('profile-setup-prompt-page');
+        const profileCreationPage = document.getElementById('profile-creation-page');
+        
+        onAuthStateChanged(auth, async (user) => {
+            currentUser = user;
+            updateUIForAuthState(user);
+            if (user) {
+                try {
+                    const userDocRef = doc(db, 'users', user.uid);
+                    const docSnap = await getDoc(userDocRef);
+                    if (!docSnap.exists()) {
+                        displayProfileSetupPrompt();
+                    } else {
+                        displayAppContent();
+                    }
+                } catch(error) {
+                    console.error("Error checking user profile:", error.message);
+                    displayAppContent();
+                }
+            } else {
+                displayAppContent();
+            }
+        });
+
+        function updateUIForAuthState(user) {
+            const heroButton = document.querySelector('.hero-content .btn-hero');
+            if (user) {
+                headerActions.innerHTML = `
+                    <a href="medpro.html" class="btn">My Profile</a>
+                    <button class="btn" id="logout-btn">Logout</button>
+                `;
+                document.getElementById('logout-btn').addEventListener('click', handleLogout);
+                if (heroButton) heroButton.style.display = 'none';
+            } else {
+                headerActions.innerHTML = `<button class="btn" data-modal-target="auth-modal">Login / Signup</button>`;
+                document.querySelector('.header-actions .btn').addEventListener('click', () => openModal(authModal));
+                if (heroButton) {
+                    heroButton.style.display = 'inline-block';
+                    heroButton.addEventListener('click', () => openModal(authModal));
+                }
+            }
+        }
+        
+        function displayProfileSetupPrompt() {
+            appContainer.classList.add('hidden');
+            profileSetupPromptPage.classList.remove('hidden');
+        }
+        
+        function displayAppContent() {
+             profileSetupPromptPage.classList.add('hidden');
+               profileCreationPage.classList.add('hidden');
+               appContainer.classList.remove('hidden');
+        }
+
+        function showProfileCreationPage() {
+            const nameFromAuth = auth.currentUser?.displayName;
+            if (nameFromAuth) {
+                document.getElementById('profile-name').value = nameFromAuth;
+            }
+            profileSetupPromptPage.classList.add('hidden');
+            profileCreationPage.classList.remove('hidden');
+        }
+        
+        document.getElementById('setup-profile-btn-main')?.addEventListener('click', showProfileCreationPage);
+
+        function openModal(modal) { if (modal) modal.classList.add('visible'); }
+        function closeModal(modal) { if (modal) modal.classList.remove('visible'); }
+        
+        document.addEventListener('click', (e) => {
+            const targetButton = e.target.closest('[data-modal-target]');
+            if (targetButton) {
+                e.preventDefault(); // Prevent default link behavior for modal triggers
+                const modalId = targetButton.dataset.modalTarget;
+                const feature = targetButton.dataset.feature;
+                const authRequired = feature && sessionStorage.getItem(`${feature}Used`) === 'true' && !currentUser;
+
+                if (authRequired) {
+                    openModal(authModal);
+                } else if(modalId) {
+                    openModal(document.getElementById(modalId));
+                }
+            }
+        });
+        
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(overlay); });
+            overlay.querySelector('.modal-close-btn')?.addEventListener('click', () => closeModal(overlay));
+        });
+        
+        const authTabs = document.querySelectorAll('.auth-tab');
+        const authForms = document.querySelectorAll('.auth-form');
+        authTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                authTabs.forEach(t => t.classList.remove('active'));
+                authForms.forEach(f => f.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.form).classList.add('active');
+                clearAuthMessages();
+            });
+        });
+
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const authErrorMsg = document.getElementById('auth-error-message');
+        const authSuccessMsg = document.getElementById('auth-success-message');
+
+        function showAuthMessage(message, type = 'error') {
+            const el = type === 'error' ? authErrorMsg : authSuccessMsg;
+            const otherEl = type === 'error' ? authSuccessMsg : authErrorMsg;
+            el.textContent = message;
+            el.style.display = 'block';
+            otherEl.style.display = 'none';
+        }
+        function clearAuthMessages() {
+            authErrorMsg.style.display = 'none';
+            authSuccessMsg.style.display = 'none';
+        }
+
+        const toggleButtonLoading = (btn, isLoading) => {
+            if(btn) {
+                btn.disabled = isLoading;
+                btn.classList.toggle('loading', isLoading);
+            }
+        };
+
+        signupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            clearAuthMessages();
+            const signupBtn = signupForm.querySelector('.modal-action-btn');
+            toggleButtonLoading(signupBtn, true);
+            
+            const name = signupForm['signup-name'].value;
+            const email = signupForm['signup-email'].value;
+            const password = signupForm['signup-password'].value;
+            if (!name) { 
+                showAuthMessage("Please enter your full name."); 
+                toggleButtonLoading(signupBtn, false);
+                return; 
+            }
+
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                await updateProfile(userCredential.user, { displayName: name });
+                closeModal(authModal);
+            } catch (error) { 
+                showAuthMessage(error.message.replace('Firebase: ','')); 
+            } finally {
+                toggleButtonLoading(signupBtn, false);
+            }
+        });
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            clearAuthMessages();
+            const loginBtn = loginForm.querySelector('.modal-action-btn');
+            toggleButtonLoading(loginBtn, true);
+
+            const email = loginForm['login-email'].value;
+            const password = loginForm['login-password'].value;
+            try {
+                await signInWithEmailAndPassword(auth, email, password);
+                closeModal(authModal);
+            } catch (error) { 
+                showAuthMessage(error.message.replace('Firebase: ','')); 
+            } finally {
+                toggleButtonLoading(loginBtn, false);
+            }
+        });
+
+        async function handleLogout() {
+             try { await signOut(auth); } catch(error) { console.error("Logout Error:", error); }
+        }
+
+        const profileForm = document.getElementById('profile-form');
+        const profilePicUpload = document.getElementById('profile-pic-upload');
+        const profilePicPreview = document.getElementById('profile-pic-preview');
+        const noGeneticConditionsCheckbox = document.getElementById('no-genetic-conditions');
+        const geneticConditionsTextarea = document.getElementById('genetic-conditions');
+
+        profilePicPreview.addEventListener('click', () => profilePicUpload.click());
+        profilePicUpload.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => { profilePicPreview.src = event.target.result; }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        noGeneticConditionsCheckbox.addEventListener('change', () => {
+            geneticConditionsTextarea.disabled = noGeneticConditionsCheckbox.checked;
+            if (noGeneticConditionsCheckbox.checked) { geneticConditionsTextarea.value = ''; }
+        });
+        
+        profileForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const saveBtn = profileForm.querySelector('.save-profile-btn');
+            toggleButtonLoading(saveBtn, true);
+            try {
+                const user = auth.currentUser;
+                if (!user) throw new Error("No user found");
+                let photoURL = user.photoURL || '';
+                const file = profilePicUpload.files[0];
+                if(file) {
+                    const storageRef = ref(storage, `profile_pictures/${user.uid}`);
+                    const snapshot = await uploadBytes(storageRef, file);
+                    photoURL = await getDownloadURL(snapshot.ref);
+                }
+                const fullName = document.getElementById('profile-name').value;
+                await updateProfile(user, { displayName: fullName, photoURL: photoURL });
+                const profileData = {
+                    uid: user.uid, email: user.email, displayName: fullName, photoURL: photoURL,
+                    age: document.getElementById('profile-age').value,
+                    profession: document.getElementById('profile-profession').value,
+                    gender: document.getElementById('profile-gender').value,
+                    bloodGroup: document.getElementById('profile-blood-group').value,
+                    geneticConditions: noGeneticConditionsCheckbox.checked ? "None" : geneticConditionsTextarea.value.trim(),
+                    createdAt: new Date().toISOString()
+                };
+                const userDocRef = doc(db, 'users', user.uid);
+                await setDoc(userDocRef, profileData, { merge: true });
+                displayAppContent();
+            } catch(error) {
+                console.error("Error creating profile:", error);
+                alert("Could not save profile. Please try again.");
+            } finally {
+                toggleButtonLoading(saveBtn, false);
+            }
+        });
+        
+        async function callGemini(prompt, button, resultsDiv, featureName) {
+            const aiLoader = resultsDiv.parentElement.querySelector('.ai-loader');
+            if (!GEMINI_API_KEY || GEMINI_API_KEY === "PASTE_YOUR_GEMINI_API_KEY_HERE") {
+                resultsDiv.innerHTML = '<p style="color: var(--danger-red);">API Key is not configured.</p>';
+                return;
+            }
+            toggleButtonLoading(button, true);
+            if (aiLoader) aiLoader.style.display = 'block';
+            resultsDiv.innerHTML = '';
+            
+            const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
+            const payload = { contents: [{ parts: [{ text: prompt }] }] };
+            try {
+                const response = await fetch(API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(`API Error: ${response.status} - ${errorData.error.message}`);
+                }
+                const result = await response.json();
+                if (result.candidates?.[0]?.content?.parts?.[0]) {
+                    resultsDiv.innerHTML = formatResponse(result.candidates[0].content.parts[0].text);
+                    if (!currentUser) {
+                        sessionStorage.setItem(`${featureName}Used`, 'true');
+                    }
+                } else { throw new Error("Invalid API response structure."); }
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                resultsDiv.innerHTML = `<p style="color: var(--danger-red);">An error occurred: ${error.message}</p>`;
+            } finally {
+                toggleButtonLoading(button, false);
+                if (aiLoader) aiLoader.style.display = 'none';
+            }
+        }
+
+        function formatResponse(text) {
+            let formatted = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            formatted = formatted.replace(/^\s*[\*-]\s*(.*)$/gm, '<li>$1</li>');
+            formatted = formatted.replace(/(<li>[\s\S]*?<\/li>)/g, '<ul>$1</ul>').replace(/<\/ul>\s*<ul>/g, '');
+            return formatted.replace(/\n/g, '<br>');
+        }
+
+        const symptomModal = document.getElementById('symptom-modal');
+        symptomModal.querySelector('.symptom-analyze-btn').addEventListener('click', (e) => {
+            const input = symptomModal.querySelector('.symptom-input').value.trim();
+            if (!input) { symptomModal.querySelector('.ai-results').innerHTML = '<p style="color: var(--danger-red);">Please enter your symptoms.</p>'; return; }
+            const prompt = `**Role:** You are MedLink AI...`;
+            callGemini(prompt, e.currentTarget, symptomModal.querySelector('.ai-results'), 'symptomAnalyzer');
+        });
+        
+        const specialistModal = document.getElementById('specialist-modal');
+        specialistModal.querySelector('.specialist-suggest-btn').addEventListener('click', (e) => {
+            const input = specialistModal.querySelector('.specialist-input').value.trim();
+            if (!input) { specialistModal.querySelector('.ai-results').innerHTML = '<p style="color: var(--danger-red);">Please describe your issue.</p>'; return; }
+            const prompt = `**Role:** You are MedLink AI...`;
+            callGemini(prompt, e.currentTarget, specialistModal.querySelector('.ai-results'), 'specialistSuggester');
+        });
+    </script>
+</body>
+</html>

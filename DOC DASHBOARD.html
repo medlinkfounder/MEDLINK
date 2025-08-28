@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doc's Dashboard</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Ionicons for UI elements -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333333;
+        }
+        body::before {
+            content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%234169e1' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h9V0h1v4h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h-1v-9h-9v9h-1v-9h-9v9h-1v-9h-9v9h-1v-9h-9v9h-1v-9h-9v9h-1v-9H5V6h1V5zM5 6v9h1V6h9V5H6v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zm10 0v9h1V6h9V5h-9v1zM5 16v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 26v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 36v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 46v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 56v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 66v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 76v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zM5 86v9h1v-9H5zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1zm10 0v9h1v-9h-1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: -1; opacity: 0.5;
+        }
+        .schedule-card {
+            background-color: #FFFFFF;
+            border: 1px solid #e0e0e0;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.07);
+        }
+        .btn-primary {
+            background-color: #4169E1; color: white;
+            transition: all 0.3s ease; font-weight: 600;
+            border-radius: 0.5rem;
+        }
+        .btn-primary:hover {
+            background-color: #3558C8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(65, 105, 225, 0.3);
+        }
+        .btn-secondary {
+            background-color: #e0e7ff; color: #4169E1;
+            transition: all 0.3s ease; font-weight: 500;
+            border-radius: 0.5rem;
+        }
+        .btn-secondary:hover { background-color: #c7d2fe; }
+        .btn-danger {
+            background-color: #fee2e2; color: #dc2626;
+            transition: all 0.3s ease; font-weight: 500;
+            border-radius: 0.5rem; padding: 0.5rem 1rem;
+        }
+        .btn-danger:hover { background-color: #fecaca; }
+        .text-gradient {
+            background: -webkit-linear-gradient(45deg, #4169E1, #5c85ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .toggle-switch { position: relative; display: inline-block; width: 120px; height: 38px; }
+        .toggle-switch input { opacity: 0; width: 0; height: 0; }
+        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ef4444; transition: .4s; border-radius: 34px; }
+        .slider:before { position: absolute; content: ""; height: 30px; width: 30px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
+        input:checked + .slider { background-color: #22c55e; }
+        input:checked + .slider:before { transform: translateX(82px); }
+        .slider:after { position: absolute; top: 50%; transform: translateY(-50%); font-size: 13px; font-weight: 600; color: white; transition: all 0.4s ease; }
+        input:not(:checked) + .slider:after { content: 'OFFLINE'; right: 15px; }
+        input:checked + .slider:after { content: 'ONLINE'; left: 15px; }
+    </style>
+</head>
+<body class="antialiased">
+    <div id="dashboard-container" class="hidden relative min-h-screen w-full p-4 sm:p-6 lg:p-8">
+        <header class="flex flex-col md:flex-row items-center justify-between mb-8 gap-4">
+            <div>
+                <h1 class="text-3xl lg:text-4xl font-bold text-gray-800">
+                    Doc's <span class="text-gradient">Dashboard</span>
+                </h1>
+                <p class="text-gray-500">Welcome back, <span id="doctor-name" class="font-semibold">Doctor</span>!</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="status-toggle">
+                    <span class="slider"></span>
+                </label>
+                <button id="signout-btn" class="btn-danger flex items-center gap-2">
+                    <ion-icon name="log-out-outline"></ion-icon>
+                    Sign Out
+                </button>
+            </div>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <section id="online-consultancy" class="schedule-card p-6 lg:p-8">
+                <div class="flex items-center gap-3 mb-6">
+                    <ion-icon name="videocam-outline" class="text-3xl text-green-500"></ion-icon>
+                    <h2 class="text-2xl font-bold text-gray-700">Online Consultancy</h2>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between bg-gray-50 p-4 rounded-xl border border-gray-200">
+                        <div>
+                            <p class="font-semibold text-gray-800">Mr. John Doe</p>
+                            <p class="text-sm text-gray-500">10:00 AM - 10:30 AM</p>
+                        </div>
+                        <button class="btn-primary py-2 px-4 text-sm flex items-center gap-2">
+                            <ion-icon name="videocam"></ion-icon> Join Call
+                        </button>
+                    </div>
+                </div>
+                 <button class="btn-secondary w-full py-2 mt-6">View Full Online Schedule</button>
+            </section>
+            <section id="offline-consultancy" class="schedule-card p-6 lg:p-8">
+                <div class="flex items-center gap-3 mb-6">
+                    <ion-icon name="business-outline" class="text-3xl text-blue-500"></ion-icon>
+                    <h2 class="text-2xl font-bold text-gray-700">Offline Consultancy</h2>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between bg-gray-50 p-4 rounded-xl border border-gray-200">
+                        <div>
+                            <p class="font-semibold text-gray-800">Mrs. Emily Jones</p>
+                            <p class="text-sm text-gray-500">09:30 AM - 09:45 AM</p>
+                        </div>
+                         <button class="btn-secondary py-2 px-4 text-sm flex items-center gap-2">
+                             <ion-icon name="document-text-outline"></ion-icon> View Details
+                        </button>
+                    </div>
+                </div>
+                <button class="btn-secondary w-full py-2 mt-6">View Full Offline Schedule</button>
+            </section>
+        </main>
+    </div>
+
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, getDoc, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        setLogLevel('debug');
+
+        // --- Firebase Configuration ---
+        const firebaseConfig = {
+            apiKey: "AIzaSyBjf5lp8vhZrpgdOiGyAhH9iSp4UrXXZCM",
+            authDomain: "medlink-e4f46.firebaseapp.com",
+            projectId: "medlink-e4f46",
+            storageBucket: "medlink-e4f46.appspot.com",
+            messagingSenderId: "109099855422",
+            appId: "1:109099855422:web:9ae346a0f54dead6412b6f",
+            measurementId: "G-C4Z1JKBG2E"
+        };
+
+        // --- DOM Element References ---
+        const dashboardContainer = document.getElementById('dashboard-container');
+        const doctorNameSpan = document.getElementById('doctor-name');
+        const signoutBtn = document.getElementById('signout-btn');
+        const statusToggle = document.getElementById('status-toggle');
+
+        // --- Firebase Initialization ---
+        let app, auth, db;
+        try {
+            app = initializeApp(firebaseConfig);
+            auth = getAuth(app);
+            db = getFirestore(app);
+            console.log("Firebase initialized on dashboard.");
+        } catch (error) {
+            console.error("Firebase Initialization Error:", error);
+        }
+        
+        // --- Authentication Check and Data Fetching ---
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                // User is signed in.
+                console.log("Dashboard: User is authenticated:", user.uid);
+                
+                // Fetch the doctor's profile from Firestore.
+                const profileRef = doc(db, 'doctor_profiles', user.uid);
+                try {
+                    const docSnap = await getDoc(profileRef);
+                    if (docSnap.exists()) {
+                        const profileData = docSnap.data();
+                        // Update the UI with the doctor's name.
+                        doctorNameSpan.textContent = profileData.fullName || 'Doctor';
+                    } else {
+                        // This case is unlikely if the flow is correct, but good to handle.
+                        // It means the user is authenticated but has no profile document.
+                        console.warn("User has no profile document! Redirecting to profile creation.");
+                        window.location.href = 'Dotor profile.html';
+                        return; // Stop further execution on this page
+                    }
+                } catch(error) {
+                    console.error("Error fetching doctor profile:", error);
+                    doctorNameSpan.textContent = 'Doctor (Error)';
+                }
+
+                // Once data is loaded, show the dashboard.
+                dashboardContainer.classList.remove('hidden');
+
+            } else {
+                // No user is signed in. Redirect to the login page.
+                console.log("Dashboard: No user authenticated. Redirecting to login page.");
+                window.location.href = 'Doctor side la.html';
+            }
+        });
+
+        // --- Sign Out Button ---
+        signoutBtn.addEventListener('click', async () => {
+            try {
+                await signOut(auth);
+                console.log("User signed out successfully.");
+                // The onAuthStateChanged listener will automatically redirect to the login page.
+            } catch (error) {
+                console.error("Sign-out error:", error);
+                alert("Could not sign out. Please try again.");
+            }
+        });
+        
+        // --- Status Toggle (existing logic) ---
+        statusToggle.addEventListener('change', function() {
+            if (this.checked) {
+                console.log('Server Request: Set doctor status to ONLINE');
+            } else {
+                console.log('Server Request: Set doctor status to OFFLINE');
+            }
+        });
+    </script>
+</body>
+</html>

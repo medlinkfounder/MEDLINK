@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedLink - Medical Profile Setup</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Ionicons for UI elements -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'royal-blue': '#4169E1',
+                        'dark-grey': '#333333',
+                        'light-grey': '#f8f9fa',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                     animation: {
+                        'gradient-x':'gradient-x 15s ease infinite',
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': {
+                                'background-size':'200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size':'200% 200%',
+                                'background-position': 'right center'
+                            }
+                        },
+                        'blob': {
+                           '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                           '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                           '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                           '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-light-grey font-poppins text-dark-grey bg-gradient-to-r from-white to-blue-50 animate-gradient-x">
+    
+    <!-- Background Blobs for decoration -->
+    <div class="absolute top-0 left-0 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+    <div class="absolute top-0 right-0 w-72 h-72 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+    <div class="absolute bottom-0 left-20 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+
+
+    <!-- Main Container for the Profile Page -->
+    <main id="profile-creation-page" class="relative flex items-center justify-center min-h-screen p-4 sm:p-8">
+        <div id="profile-form-container" class="bg-white/80 backdrop-blur-xl p-6 sm:p-10 rounded-2xl shadow-2xl w-full max-w-3xl border border-gray-200">
+            <h2 class="text-center text-royal-blue text-3xl sm:text-4xl font-bold mb-2">Medical Profile</h2>
+            <p class="text-center text-gray-500 mb-8">Keep your information up-to-date.</p>
+
+            <!-- User ID Display -->
+            <div class="mb-6 text-center">
+                <p class="text-sm text-gray-500">Your Unique ID:</p>
+                <p id="userIdDisplay" class="font-mono bg-gray-100 p-2 rounded-md text-sm break-all select-all">Initializing...</p>
+            </div>
+
+            <!-- Profile Form -->
+            <form id="profile-form">
+                <!-- Profile Picture Area (Now uses a mock photo) -->
+                <div class="flex flex-col items-center mb-6">
+                    <div class="relative w-36 h-36">
+                        <img src="https://i.pravatar.cc/150" id="profile-pic-preview" alt="Profile Picture Preview" class="w-36 h-36 rounded-full object-cover border-4 border-gray-300">
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2">A unique photo will be assigned to you.</p>
+                </div>
+
+                <!-- Form Fields Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+                    <!-- Full Name -->
+                    <div class="md:col-span-2">
+                        <label for="profile-name" class="block font-semibold mb-2">Full Name</label>
+                        <div class="relative group">
+                            <input type="text" id="profile-name" class="w-full pl-12 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-royal-blue focus:outline-none transition" required>
+                            <ion-icon name="person-outline" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl group-focus-within:text-royal-blue transition-colors pointer-events-none"></ion-icon>
+                        </div>
+                    </div>
+
+                    <!-- Age -->
+                    <div>
+                        <label for="profile-age" class="block font-semibold mb-2">Age</label>
+                        <div class="relative group">
+                            <input type="number" id="profile-age" min="0" class="w-full pl-12 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-royal-blue focus:outline-none transition" required>
+                             <ion-icon name="calendar-outline" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl group-focus-within:text-royal-blue transition-colors pointer-events-none"></ion-icon>
+                        </div>
+                    </div>
+
+                    <!-- Blood Group -->
+                    <div>
+                        <label for="profile-blood-group" class="block font-semibold mb-2">Blood Group</label>
+                        <div class="relative group">
+                            <select id="profile-blood-group" class="w-full pl-12 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-royal-blue focus:outline-none transition bg-white appearance-none">
+                                <option value="Unknown">Select Blood Group</option>
+                                <option value="A+">A+</option> <option value="A-">A-</option>
+                                <option value="B+">B+</option> <option value="B-">B-</option>
+                                <option value="AB+">AB+</option> <option value="AB-">AB-</option>
+                                <option value="O+">O+</option> <option value="O-">O-</option>
+                            </select>
+                            <ion-icon name="water-outline" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl group-focus-within:text-royal-blue transition-colors pointer-events-none"></ion-icon>
+                        </div>
+                    </div>
+
+                    <!-- Profession -->
+                    <div class="md:col-span-2">
+                        <label for="profile-profession" class="block font-semibold mb-2">Profession</label>
+                        <div class="relative group">
+                            <input type="text" id="profile-profession" class="w-full pl-12 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-royal-blue focus:outline-none transition">
+                            <ion-icon name="briefcase-outline" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl group-focus-within:text-royal-blue transition-colors pointer-events-none"></ion-icon>
+                        </div>
+                    </div>
+
+                    <!-- Genetic Conditions -->
+                    <div class="md:col-span-2">
+                         <label for="genetic-conditions" class="block font-semibold mb-2">Known Genetic Conditions</label>
+                         <div class="relative group">
+                             <textarea id="genetic-conditions" placeholder="e.g., Type 1 Diabetes, Sickle Cell Anemia..." rows="4" class="w-full pl-12 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-royal-blue focus:outline-none transition resize-none"></textarea>
+                             <ion-icon name="pulse-outline" class="absolute left-4 top-5 text-gray-400 text-xl group-focus-within:text-royal-blue transition-colors pointer-events-none"></ion-icon>
+                         </div>
+                    </div>
+                </div>
+
+                <!-- Save Button and Status Message -->
+                <div class="mt-8 text-center">
+                    <button type="submit" id="save-profile-btn" class="w-full md:w-auto bg-royal-blue text-white font-bold py-3 px-12 rounded-lg hover:bg-opacity-90 transition-all duration-300 disabled:bg-gray-400 transform hover:scale-105">
+                        <span id="btn-text" class="flex items-center justify-center gap-2">
+                            <ion-icon name="save-outline"></ion-icon>
+                            Save Profile
+                        </span>
+                        <span id="btn-loader" class="hidden">Saving...</span>
+                    </button>
+                    <p id="save-status" class="text-green-600 mt-4 h-5"></p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        // --- Firebase Imports ---
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, onSnapshot, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Enable Firestore logging for debugging
+        setLogLevel('debug');
+
+        // --- Firebase Configuration ---
+        const firebaseConfig = {
+          apiKey: "AIzaSyBjf5lp8vhZrpgdOiGyAhH9iSp4UrXXZCM",
+          authDomain: "medlink-e4f46.firebaseapp.com",
+          projectId: "medlink-e4f46",
+          storageBucket: "medlink-e4f46.appspot.com",
+          messagingSenderId: "109099855422",
+          appId: "1:109099855422:web:9ae346a0f54dead6412b6f",
+          measurementId: "G-C4Z1JKBG2E"
+        };
+        
+        const appId = firebaseConfig.appId; 
+        const initialAuthToken = null;
+
+        // --- DOM Element References ---
+        const profileForm = document.getElementById('profile-form');
+        const profilePicPreview = document.getElementById('profile-pic-preview');
+        const saveBtn = document.getElementById('save-profile-btn');
+        const btnText = document.getElementById('btn-text');
+        const btnLoader = document.getElementById('btn-loader');
+        const saveStatus = document.getElementById('save-status');
+        const userIdDisplay = document.getElementById('userIdDisplay');
+
+        // --- Firebase Initialization ---
+        let app, auth, db, userId;
+
+        function initializeFirebaseApp() {
+            try {
+                app = initializeApp(firebaseConfig);
+                auth = getAuth(app);
+                db = getFirestore(app);
+                handleAuthentication();
+            } catch (error) {
+                console.error("Firebase initialization failed:", error);
+                saveStatus.textContent = "Error: Could not connect to the service.";
+                saveStatus.style.color = "red";
+            }
+        }
+
+        // --- Authentication Handler ---
+        function handleAuthentication() {
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    userId = user.uid;
+                    userIdDisplay.textContent = userId;
+                    // Set the mock photo based on the user ID
+                    profilePicPreview.src = `https://i.pravatar.cc/150?u=${userId}`;
+                    loadProfileData(); 
+                } else {
+                    signInAnonymously(auth).catch((error) => {
+                        console.error("Anonymous sign-in failed:", error);
+                        saveStatus.textContent = "Authentication failed. Cannot save data.";
+                        saveStatus.style.color = "red";
+                    });
+                }
+            });
+        }
+
+        // --- UI Helper Functions ---
+        function setButtonLoading(isLoading) {
+            saveBtn.disabled = isLoading;
+            btnText.classList.toggle('hidden', isLoading);
+            btnLoader.classList.toggle('hidden', !isLoading);
+        }
+
+        function showSaveStatus(message, isError = false) {
+            saveStatus.textContent = message;
+            saveStatus.style.color = isError ? 'red' : 'green';
+            setTimeout(() => {
+                saveStatus.textContent = '';
+            }, 3000);
+        }
+        
+        // --- Data Loading ---
+        function loadProfileData() {
+            if (!userId) return;
+            const profileDocRef = doc(db, `artifacts/${appId}/users/${userId}/medicalProfile`, "profile");
+            onSnapshot(profileDocRef, (docSnap) => {
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    document.getElementById('profile-name').value = data.name || '';
+                    document.getElementById('profile-age').value = data.age || '';
+                    document.getElementById('profile-blood-group').value = data.bloodGroup || 'Unknown';
+                    document.getElementById('profile-profession').value = data.profession || '';
+                    document.getElementById('genetic-conditions').value = data.geneticConditions || '';
+                    // Update the image preview if a URL exists in the database
+                    if (data.photoURL) {
+                        profilePicPreview.src = data.photoURL;
+                    }
+                }
+            }, (error) => {
+                showSaveStatus("Could not load profile data.", true);
+            });
+        }
+
+        // --- Event Listener for Form Submission ---
+        profileForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            if (!userId) {
+                showSaveStatus("You are not signed in. Cannot save.", true);
+                return;
+            }
+            setButtonLoading(true);
+            let isSuccess = false;
+
+            try {
+                // *** UPDATED: Save the mock photo URL to the database ***
+                const mockPhotoURL = `https://i.pravatar.cc/150?u=${userId}`;
+
+                const profileData = {
+                    name: document.getElementById('profile-name').value,
+                    age: document.getElementById('profile-age').value,
+                    bloodGroup: document.getElementById('profile-blood-group').value,
+                    profession: document.getElementById('profile-profession').value,
+                    geneticConditions: document.getElementById('genetic-conditions').value,
+                    lastUpdated: new Date().toISOString(),
+                    photoURL: mockPhotoURL // Save the mock photo URL
+                };
+
+                const profileDocRef = doc(db, `artifacts/${appId}/users/${userId}/medicalProfile`, "profile");
+                await setDoc(profileDocRef, profileData, { merge: true });
+
+                showSaveStatus("Profile saved successfully! Redirecting...", false);
+                isSuccess = true;
+
+                localStorage.setItem('medicalProfile', JSON.stringify(profileData));
+
+            } catch (error) {
+                console.error("Error saving profile:", error);
+                 if (error.code === 'permission-denied') {
+                     showSaveStatus("Error: Permission denied. Check Firestore rules.", true);
+                } else {
+                     showSaveStatus("Failed to save profile. Please try again.", true);
+                }
+            } finally {
+                setButtonLoading(false);
+                if (isSuccess) {
+                    setTimeout(() => {
+                        window.location.href = 'medpro.html';
+                    }, 1500);
+                }
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', initializeFirebaseApp);
+    </script>
+</body>
+</html>
